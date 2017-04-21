@@ -1,11 +1,5 @@
 import React from 'react';
 import '../public/css/home.css';
-// import './plugins/polyfills.js';
-// import './plugins/slideshow.js';
-// import './plugins/main.js';
-
-
-
 
 var Home = React.createClass({
 
