@@ -15,6 +15,23 @@ module.exports = {
             {
                 test: /\.css$/,
                 loader: 'style-loader!css-loader' //Style loader runs first and then pipes output into the CSS loader
+            },
+            // Load images
+            {
+                test: /\.jpg/,
+                loader: "url-loader?limit=10000&mimetype=image/jpg"
+            },
+            {
+                test: /\.gif/,
+                loader: "url-loader?limit=10000&mimetype=image/gif"
+            },
+            {
+                test: /\.png/,
+                loader: "url-loader?limit=10000&mimetype=image/png"
+            },
+            {
+                test: /\.svg/,
+                loader: "url-loader?limit=10000&mimetype=image/svg"
             }
         ]
     },

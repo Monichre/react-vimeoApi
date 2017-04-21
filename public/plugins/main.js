@@ -50,50 +50,99 @@
 
 
 
-	// Document on load.
-	$(function(){
 
 
-		var button = document.getElementById('cn-button'),
-	    wrapper = document.getElementById('cn-wrapper'),
-	    overlay = document.getElementById('cn-overlay');
+	/*	Masonry
+	------------------------------------------------------ */
+	var ssMasonryFolio = function() {
+		var containerBricks = $('.bricks-wrapper');
 
-		//open and close menu when the button is clicked
-		var open = false;
-		button.addEventListener('click', handler, false);
-		wrapper.addEventListener('click', cnhandle, false);
+		containerBricks.imagesLoaded( function() {
 
-		function cnhandle(e){
-			e.stopPropagation();
-		}
+			containerBricks.masonry( {
+			  	itemSelector: '.entry',
+			  	columnWidth: '.grid-sizer',
+	  			percentPosition: true,
+			  	resize: true
+			});
 
-		function handler(e){
-			if (!e) var e = window.event;
-		 	e.stopPropagation();//so that it doesn't trigger click event on document
-
-		  	if(!open){
-		    	openNav();
-		  	}
-		 	else{
-		    	closeNav();
-		  	}
-		}
-		function openNav(){
-			open = true;
-		    button.innerHTML = "-";
-		    classie.add(overlay, 'on-overlay');
-		    classie.add(wrapper, 'opened-nav');
-		}
-		function closeNav(){
-			open = false;
-			button.innerHTML = "+";
-			classie.remove(overlay, 'on-overlay');
-			classie.remove(wrapper, 'opened-nav');
-		}
-		document.addEventListener('click', closeNav);
+		});
+	};
 
 
-	});
+  /* animate bricks
+	* ------------------------------------------------------ */
+	var ssBricksAnimate = function() {
+
+		var animateEl = $('.animate-this');
+
+		window.on('load', function() {
+			setTimeout(function() {
+				animateEl.each(function(ctr) {
+						var el = $(this);
+
+						setTimeout(function() {
+							el.addClass('animated fadeInUp');
+						}, ctr * 200);
+
+				});
+			}, 200);
+		});
+
+		window.on('resize', function() {
+			// remove animation classes
+			animateEl.removeClass('animate-this animated fadeInUp');
+		});
+
+	};
+
+
+  /* Flex Slider
+	* ------------------------------------------------------ */
+	var ssFlexSlider = function() {
+
+		window.on('load', function() {
+
+		   $('#featured-post-slider').flexslider({
+				namespace: "flex-",
+		      controlsContainer: "", // ".flex-content",
+		      animation: 'fade',
+		      controlNav: false,
+		      directionNav: true,
+		      smoothHeight: false,
+		      slideshowSpeed: 7000,
+		      animationSpeed: 600,
+		      randomize: false,
+		      touch: true,
+		   });
+
+		   $('.post-slider').flexslider({
+		   	namespace: "flex-",
+		      controlsContainer: "",
+		      animation: 'fade',
+		      controlNav: true,
+		      directionNav: false,
+		      smoothHeight: false,
+		      slideshowSpeed: 7000,
+		      animationSpeed: 600,
+		      randomize: false,
+		      touch: true,
+		      start: function (slider) {
+					if (typeof slider.container === 'object') {
+						slider.container.on("click", function (e) {
+							if (!slider.animating) {
+								slider.flexAnimate(slider.getTarget('next'));
+							}
+						});
+					}
+
+					$('.bricks-wrapper').masonry('layout');
+				}
+		   });
+
+	   });
+	};
+
 
 
 
