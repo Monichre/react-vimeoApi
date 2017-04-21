@@ -17,5 +17,8 @@ module.exports = {
                 loader: 'style-loader!css-loader' //Style loader runs first and then pipes output into the CSS loader
             }
         ]
-    }
+    },
+    devServer: {
+      historyApiFallback: true
+  }
 };

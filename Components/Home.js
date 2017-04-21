@@ -42,11 +42,9 @@ var Home = React.createClass({
                             </div>
 
                         </div>
-                        <a className="link link-sponsor" href="#">Public Defender + Videographer</a>
+                        <a className="link link--sponsor" href="#">Public Defender + Videographer</a>
                     </section>
                 </main>
-
-
 
             </div>
 
