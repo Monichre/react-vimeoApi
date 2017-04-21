@@ -1,4 +1,6 @@
-
+.Home {
+	height: 100vh;
+}
 /* Header */
 
 .codrops-header {
@@ -277,7 +279,7 @@
 
 /* Themes */
 
-.demo-1 .page-title {
+.Home .page-title {
 	z-index: 10;
 	font-size: 0.85em;
     font-family: inherit;
@@ -286,23 +288,23 @@
     top: 38vh;
 }
 
-.demo-1 .slide:first-child .slide__title,
-.demo-1 .slideshow__nav .btn:first-child {
+.Home .slide:first-child .slide__title,
+.Home .slideshow__nav .btn:first-child {
 	color: #facb7a;
 }
 
-.demo-1 .slide:nth-child(2) .slide__title,
-.demo-1 .slideshow__nav .btn:nth-child(2) {
+.Home .slide:nth-child(2) .slide__title,
+.Home .slideshow__nav .btn:nth-child(2) {
 	color: #d06690;
 }
 
-.demo-1 .slide:nth-child(3) .slide__title,
-.demo-1 .slideshow__nav .btn:nth-child(3) {
+.Home .slide:nth-child(3) .slide__title,
+.Home .slideshow__nav .btn:nth-child(3) {
 	color: #9ccc65;
 }
 
-.demo-1 .slide:nth-child(4) .slide__title,
-.demo-1 .slideshow__nav .btn:nth-child(4) {
+.Home .slide:nth-child(4) .slide__title,
+.Home .slideshow__nav .btn:nth-child(4) {
 	color: #90a4ae;
 }
 

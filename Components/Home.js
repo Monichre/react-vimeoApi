@@ -1,6 +1,10 @@
 import React from 'react';
 import '../public/css/home.css';
 
+// Sub-Components
+import FeaturedVideo from './FeaturedVideo.js';
+
+
 var Home = React.createClass({
 
     render() {
@@ -9,7 +13,7 @@ var Home = React.createClass({
 
         return (
             <div className="no-js">
-                <div id="Home" className="Home demo-1">
+                <div id="Home" className="Home">
 
                     <main>
                         <section className="content contentFull">
@@ -42,6 +46,8 @@ var Home = React.createClass({
                     </main>
 
                 </div>
+
+                <FeaturedVideo />
             </div>
 
 
