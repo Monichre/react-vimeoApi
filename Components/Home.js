@@ -15,7 +15,7 @@ var Home = React.createClass({
 
         return (
             <div className="no-js">
-                <div className="Home demo-1">
+                <div id="Home" className="Home demo-1">
 
                     <main>
                         <section className="content contentFull">

@@ -4,13 +4,12 @@ import ReactDOM from 'react-dom';
 // Router
 import { BrowserRouter, Route, IndexRoute, Link } from 'react-router-dom';
 
-// Styles
-import './public/css/nav.css';
-
 // Components
 import Home from './Components/Home.js';
 import Portfolio from './Components/Portfolio.js';
 
+// Styles
+import './public/css/nav.css';
 
 ReactDOM.render((
 
