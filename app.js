@@ -12,7 +12,7 @@ import Portfolio from './Components/Portfolio.js';
 import './public/css/nav.css';
 
 // Data
-// import videos from './API.js';
+// var Videos = require('./API.js').videos;
 // console.log(videos);
 
 
