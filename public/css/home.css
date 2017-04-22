@@ -20,6 +20,7 @@
 	margin: 0;
 	padding: 0 1em 0 0.25em;
 	color: #fff;
+	letter-spacing: 2px;
 
 }
 
@@ -126,14 +127,13 @@
 }
 
 .slide__title {
-	font-family: 'Futura';
 	font-weight: normal;
 	position: relative;
 	z-index: 10;
 	font-size: 10vw;
 	margin: 0;
 	line-height: 0.8;
-	color: #8dbd2b;
+	color: #fff4d7!important;
 	pointer-events: none;
 }
 
@@ -249,6 +249,8 @@
 	left: 0;
 	margin: 0 0 2em 2em;
 	bottom: 0;
+	color: #fff4d7!important;
+	letter-spacing: 2px;
 }
 
 .page-title {

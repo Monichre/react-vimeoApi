@@ -10,7 +10,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 body {
 	font-family: 'Oswald', sans-serif;
 	color: #909090;
-	background: #111;
+	background: rgb(28,28,28);
 }
 
 a {

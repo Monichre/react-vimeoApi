@@ -11,6 +11,11 @@ import Portfolio from './Components/Portfolio.js';
 // Styles
 import './public/css/nav.css';
 
+// Data
+// import videos from './API.js';
+// console.log(videos);
+
+
 ReactDOM.render((
 
     <BrowserRouter>
@@ -21,7 +26,7 @@ ReactDOM.render((
 
             </div>
             <div className="component">
-                <button className="cn-button" id="cn-button">+</button>
+                <button className="cn-button" id="cn-button"><i className="fa fa-anchor" aria-hidden="true"></i></button>
                 <div className="cn-wrapper" id="cn-wrapper">
                     <ul>
                       <li><Link to="/"><i className="fa fa-video-camera" aria-hidden="true"></i></Link></li>

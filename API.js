@@ -1,4 +1,4 @@
-var Vimeo = require('vimeo').Vimeo;
+import Vimeo from 'vimeo';
 var clientID = 'a403a67f112f44d9826223d299688cffcdc4c794';
 var clientSecret = '4ddwI9d7nHrcRcPlM5UE4YyNTZ9yjCCthnz+9CwY4Hdg5JkaYrOWRu24kgmnq6qmkDXNZ2EejDZ6ZmgmGM6pmMX+m02NeAPx4fty7Dc5rMCwIT1iZ/+T5Goz0xx4aoFV';
 var accessToken = '61253099d856b456e9432178d2396bb2';

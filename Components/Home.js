@@ -1,6 +1,9 @@
 import React from 'react';
 import '../public/css/home.css';
 
+// // Data
+
+
 // Sub-Components
 import FeaturedVideo from './FeaturedVideo.js';
 
@@ -8,8 +11,6 @@ import FeaturedVideo from './FeaturedVideo.js';
 var Home = React.createClass({
 
     render() {
-
-
 
         return (
             <div className="no-js">
@@ -31,10 +32,11 @@ var Home = React.createClass({
                                 <div className="slide">
                                     <div className="mirror" data-visible-area="0.85">
                                         <div className="mirror__side mirror__side--one">
-                                            <img className="mirror__img" src="../public/img/jud.jpg"  />
+                                            <img className="mirror__img" src="../public/img/jud-left.jpg"  />
                                         </div>
                                         <div className="mirror__side mirror__side--two">
-                                            <img className="mirror__img" src="../public/img/jud.jpg" />
+
+                                            <img className="mirror__img" src="../public/img/jud-left.jpg"  />
                                         </div>
                                     </div>
                                     <h2 className="slide__title">Portfolio</h2>
