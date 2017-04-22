@@ -269,7 +269,7 @@ a:focus {
 	left: 0;
 	width: 50%;
 	height: 40%;
-	border: 10px solid;
+	border: 10px solid #fff;
 }
 
 .poster__number {
@@ -280,6 +280,8 @@ a:focus {
 	bottom: 0;
 	left: calc(100% - 50px + 5px);
 	color: lavender;
+	padding-bottom: 5px;
+	border-bottom: 5px solid #fff;
 }
 
 .poster__title {
@@ -290,13 +292,14 @@ a:focus {
 	justify-content: flex-end;
 	margin: 0 0 -0.25em 0.15em;
 	text-indent: -0.75em;
+	color: #d8c184;
 }
 
 .poster__deco {
 	font-size: 2em;
 	line-height: 1;
 	margin: 0 -1.25em 0 auto;
-	color: #1d48f3;
+	color: #fff4d7;
 
 	writing-mode: vertical-rl;
 }

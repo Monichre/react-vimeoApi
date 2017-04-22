@@ -4,12 +4,7 @@ import React from 'react';
 // *******************
 import '../public/css/featured/featured.css';
 
-// JS
-// ********************
-// <script src="js/anime.min.js"></script>
-// <script src="js/enquire.min.js"></script>
-// <script src="js/tabsnav.js"></script>
-// <script src="js/demo1.js"></script>
+
 
 var FeaturedVideo = React.createClass({
 
@@ -26,7 +21,7 @@ var FeaturedVideo = React.createClass({
                         </div>
 
                         <header className="codrops-header">
-                            <p className="codrops-header__info">The straight up<br/>freshest<br/>vids<br/>I got up</p>
+                            <p className="codrops-header__info">The straight up<br/>freshest vids<br/>I got</p>
         					<span className="codrops-header__deco">hitherto</span>
         					<h1 className="codrops-header__title">unseen</h1>
         					<p className="codrops-header__tagline">peep the show</p>
@@ -34,7 +29,10 @@ var FeaturedVideo = React.createClass({
                         </header>
                     </div>
 
-
+                    <button className="btn btn--menu">
+        				<svg className="icon icon--menu"></svg>
+        				<svg className="icon icon--cross"></svg>
+        			</button>
 
                     <nav className="tabsnav tabsnav--vertical tabsnav--ander">
                         <div className="tabsnav__item">
@@ -53,7 +51,7 @@ var FeaturedVideo = React.createClass({
                     <div className="tabscontent">
                     <div className="tabscontent__item">
                         <figure className="poster">
-                            <img className="poster__img" src="img/img1.jpg" alt="Poster 1"/>
+                            <img className="poster__img" src="public/img/jud_3.jpg" alt="Poster 1"/>
                             <figcaption className="poster__caption">
                                 <h2 className="poster__title">wild<br/>corn</h2>
                                 <p className="poster__deco">nothing lost</p>
@@ -64,7 +62,7 @@ var FeaturedVideo = React.createClass({
                     </div>
                     <div className="tabscontent__item">
                         <figure className="poster">
-                            <img className="poster__img" src="img/img1.jpg" alt="Poster 1"/>
+                            <img className="poster__img" src="public/img/jud-red.jpg" alt="Poster 1"/>
                             <figcaption className="poster__caption">
                                 <h2 className="poster__title">blue<br/>gun</h2>
                                 <p className="poster__deco">fingerpaint</p>
@@ -75,7 +73,7 @@ var FeaturedVideo = React.createClass({
                     </div>
                     <div className="tabscontent__item">
                         <figure className="poster">
-                            <img className="poster__img" src="img/img1.jpg" alt="Poster 1"/>
+                            <img className="poster__img" src="public/img/jud.jpg" alt="Poster 1"/>
                             <figcaption className="poster__caption">
                                 <h2 className="poster__title">home<br/>maze</h2>
                                 <p className="poster__deco">binary sun</p>
@@ -85,9 +83,7 @@ var FeaturedVideo = React.createClass({
                         </figure>
                     </div>
                     <button className="btn btn--back">
-                        <svg className="icon icon--caret">
-
-                        </svg>
+                        <i className="fa fa-times" aria-hidden="true"></i>
                     </button>
                 </div>
                 </main>
