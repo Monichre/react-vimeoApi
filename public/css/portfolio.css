@@ -23,7 +23,7 @@ a:focus {
  *
  * ------------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6, .h01, .h02, .h03, .h04, .h05, .h06 {
-	
+
 	color: #151515;
 	font-style: normal;
 	text-rendering: optimizeLegibility;
@@ -908,7 +908,7 @@ html[xmlns] .flexslider .slides {
 }
 
 #bricks .masonry {
-	max-width: 1440px;
+	/*max-width: 1440px;*/
 }
 
 #bricks .pagination {

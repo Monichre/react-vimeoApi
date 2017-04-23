@@ -29,12 +29,12 @@ var VideoPreview = React.createClass({
                             </div>
 
                             <h1 className="entry-title">
-                                <a href="single-video.html">This Is a Video Post Format.</a>
+                                <a href="single-video.html">{this.props.name}</a>
                             </h1>
 
                         </div>
                         <div className="entry-excerpt">
-                            Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
+                            {this.props.description}
                         </div>
                     </div>
 
