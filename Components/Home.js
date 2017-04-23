@@ -1,7 +1,8 @@
 import React from 'react';
 import '../public/css/home.css';
 
-// // Data
+// Data
+import API from './API.js';
 
 
 // Sub-Components
@@ -50,6 +51,7 @@ var Home = React.createClass({
                 </div>
 
                 <FeaturedVideo />
+                <API />
             </div>
 
 

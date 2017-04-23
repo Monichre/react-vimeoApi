@@ -1,20 +1,27 @@
+
+
 module.exports = {
+
     entry: './app.js',
     output: {
         // path: 'build', This is an optional property
         filename: 'bundle.js'
     },
-    
 
+    // target: 'node',
+    // externals: [nodeExternals()],
     //This handles which transformations we'd like to make on our code
+    node: {
+        fs: 'empty'
+    },
     module: {
 
         loaders: [
 
             {
                 test: [/\.js$/, './plugins'], //This is a reg Ex telling webpack to look for all .js files
-                exclude: /node_modules/,
-                loaders: ['react-hot-loader', 'babel-loader'] //Changed to 'loaders' since we're using multiple - added react-hot to maintain Component states during reload
+                loaders: ['react-hot-loader', 'babel-loader'],
+                exclude: /node_modules/ //Changed to 'loaders' since we're using multiple - added react-hot to maintain Component states during reload
             },
             {
                 test: /\.css$/,

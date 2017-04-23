@@ -11,11 +11,6 @@ import Portfolio from './Components/Portfolio.js';
 // Styles
 import './public/css/nav.css';
 
-// Data
-// var Videos = require('./API.js').videos;
-// console.log(videos);
-
-
 ReactDOM.render((
 
     <BrowserRouter>

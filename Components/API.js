@@ -1,5 +1,5 @@
 import React from 'react';
-import Vimeo from 'vimeo';
+var Vimeo= require('vimeo').Vimeo;
 
 
 var API = React.createClass({
@@ -36,7 +36,16 @@ var API = React.createClass({
 
     render() {
 
-        return ( {this.state.videos} );
+        return (
+            <div>
+                {this.state.videos.map(function(video){
+                    console.log(video);
+                })}
+            </div>
+
+
+        );
+
     }
 });
 
