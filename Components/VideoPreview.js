@@ -14,7 +14,7 @@ var VideoPreview = React.createClass({
 
                     <div className="entry-thumb video-image">
                         <a href="#" data-lity>
-                            <img src="../public/img/camera_2.jpg" alt="bokeh"/>
+                            <img src={this.props.image} alt="bokeh"/>
                         </a>
                     </div>
 

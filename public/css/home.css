@@ -130,7 +130,8 @@
 	font-weight: normal;
 	position: relative;
 	z-index: 10;
-	font-size: 10vw;
+	font-size: 7vw;
+	text-transform: uppercase;
 	margin: 0;
 	line-height: 0.8;
 	color: #fff4d7!important;

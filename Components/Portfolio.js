@@ -6,11 +6,6 @@ import '../public/css/nav.css';
 import VideoPreview from './VideoPreview.js';
 import VideoFeaturedPreview from './VideoFeaturedPreview.js';
 
-// Data
-// import API from './API.js';
-//
-
-
 var Portfolio = React.createClass({
 
     defaultProps: {
@@ -82,7 +77,7 @@ var Portfolio = React.createClass({
 
                                 {this.state.videos.map(function(video){
                                     return (
-                                        <VideoPreview name={video.name} description={video.description} created={video.created_time} />
+                                        <VideoPreview name={video.name} description={video.description} created={video.created_time} image={video.pictures.sizes[3].link_with_play_button}/>
                                     );
 
                                 })}
