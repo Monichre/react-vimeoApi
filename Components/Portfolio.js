@@ -1,6 +1,7 @@
 import React from 'react';
 var Vimeo= require('vimeo').Vimeo;
-import '../public/css/portfolio.css';
+import '../public/css/portfolio/css/flickity.css';
+import '../public/css/portfolio/css/portfolio-alternate.css';
 import '../public/css/nav.css';
 
 import VideoPreview from './VideoPreview.js';
@@ -40,53 +41,383 @@ var Portfolio = React.createClass({
     },
 
     render() {
-        var feature_style_bg = {
-            backgroundImage: 'url(../public/img/camera_2.jpg)'
-        };
+
 
         return (
 
             <div className="Portfolio">
+                <div className="hero">
+                    <div className="hero__back hero__back--static"></div>
+                    <div className="hero__back hero__back--mover"></div>
+                    <div className="hero__front"></div>
+                </div>
 
-                <section id="bricks">
-
-                    <div className="row masonry">
-
-                        <div className="bricks-wrapper">
-
-                            <div className="grid-sizer"></div>
-
-                            <div className="brick entry featured-grid">
-                                <div className="entry-content">
-                                    <div id="featured-post-slider" className="flexslider">
-                                        <ul className="slides">
-                                            <li>
-                                                <VideoFeaturedPreview />
-                                            </li>
-                                            <li>
-                                                <VideoFeaturedPreview />
-                                            </li>
-                                            <li>
-                                                <VideoFeaturedPreview />
-                                            </li>
+                <div className="stack-slider">
+                    <div className="stacks-wrapper">
+                        <div className="stack">
+                            <h2 className="stack-title"><a href="#" data-text="Portraits"><span>Portraits</span></a></h2>
+                            <div className="item">
+                                <div className="item__content">
+                                    <img src="public/css/portfolio/img/type1/1.jpg" alt="img01" />
+                                    <h3 className="item__title">Hoodie stumptown kitsch <span className="item__date">05/05/2015</span></h3>
+                                    <div className="item__details">
+                                        <ul>
+                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
+                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5mm</span></li>
+                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
+                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
+                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
+                            <div className="item">
+                                <div className="item__content">
+                                    <img src="public/css/portfolio/img/type1/2.jpg" alt="img02" />
+                                    <h3 className="item__title">Retro irony sartorial <span className="item__date">05/05/2015</span></h3>
+                                    <div className="item__details">
+                                        <ul>
+                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
+                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
+                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
+                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
+                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="item">
+                                <div className="item__content">
+                                    <img src="public/css/portfolio/img/type1/3.jpg" alt="img03" />
+                                    <h3 className="item__title">Stumptown Brooklyn <span className="item__date">05/05/2015</span></h3>
+                                    <div className="item__details">
+                                        <ul>
+                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
+                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
+                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
+                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
+                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="item">
+                                <div className="item__content">
+                                    <img src="public/css/portfolio/img/type1/4.jpg" alt="img04" />
+                                    <h3 className="item__title">Blog dreamcatcher squid  <span className="item__date">05/05/2015</span></h3>
+                                    <div className="item__details">
+                                        <ul>
+                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
+                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
+                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
+                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
+                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="item">
+                                <div className="item__content">
+                                    <img src="public/css/portfolio/img/type1/5.jpg" alt="img05" />
+                                    <h3 className="item__title">Meditation pickled mumblecore <span className="item__date">05/05/2015</span></h3>
+                                    <div className="item__details">
+                                        <ul>
+                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
+                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
+                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
+                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
+                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
+                                        </ul>
+                                    </div>
+                                    <p>Images by <a href="https://www.flickr.com/photos/martinaphotography/">martinak15</a></p>
+                                </div>
+                            </div>
+                            <div className="item">
 
+                                <div className="item__content item__content--related">
+                                    <p>If you enjoyed this demo you might also like:</p>
+                                    <a className="media-item" href="http://tympanus.net/Tutorials/SlidingHeaderLayout/">
+                                        <img className="media-item__img" src="public/css/portfolio/img/related/SlidingHeaderLayout.jpg" />
+                                        <h3 className="media-item__title">Sliding Header Layout</h3>
+                                    </a>
+                                    <a className="media-item" href="http://tympanus.net/Development/ScatteredPolaroidsGallery/">
+                                        <img className="media-item__img" src="public/css/portfolio/img/related/ScatteredPolaroidGallery.jpg" />
+                                        <h3 className="media-item__title">Scattered Polaroid Gallery</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="stack">
+                            <h2 className="stack-title"><a href="#" data-text="Landscape"><span>Landscape</span></a></h2>
+                            <div className="item">
+                                <div className="item__content">
+                                    <img src="public/css/portfolio/img/type3/1.jpg" alt="img01" />
+                                    <h3 className="item__title">Austin flannel salvia <span className="item__date">05/05/2015</span></h3>
+                                    <div className="item__details">
+                                        <ul>
+                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
+                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
+                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
+                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
+                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="item">
+                                <div className="item__content">
+                                    <img src="public/css/portfolio/img/type3/2.jpg" alt="img02" />
+                                    <h3 className="item__title">Brunch vegan pickled cred <span className="item__date">05/05/2015</span></h3>
+                                    <div className="item__details">
+                                        <ul>
+                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
+                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
+                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
+                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
+                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="item">
+                                <div className="item__content">
+                                    <img src="public/css/portfolio/img/type3/3.jpg" alt="img03" />
+                                    <h3 className="item__title">Blog dreamcatcher squid  <span className="item__date">05/05/2015</span></h3>
+                                    <div className="item__details">
+                                        <ul>
+                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
+                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
+                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
+                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
+                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="item">
+                                <div className="item__content">
+                                    <img src="public/css/portfolio/img/type3/4.jpg" alt="img04" />
+                                    <h3 className="item__title">Migas intelligentsia meh <span className="item__date">05/05/2015</span></h3>
+                                    <div className="item__details">
+                                        <ul>
+                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
+                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
+                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
+                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
+                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="item">
+                                <div className="item__content">
+                                    <img src="public/css/portfolio/img/type3/5.jpg" alt="img05" />
+                                    <h3 className="item__title">Authentic locavore meditation <span className="item__date">05/05/2015</span></h3>
+                                    <div className="item__details">
+                                        <ul>
+                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
+                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
+                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
+                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
+                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
+                                        </ul>
+                                    </div>
+                                    <p>Images by <a href="https://www.flickr.com/photos/56218409@N03/">Matthias Ripp</a></p>
+                                </div>
+                            </div>
+                            <div className="item">
 
-                                {this.state.videos.map(function(video){
-                                    return (
-                                        <VideoPreview name={video.name} description={video.description} created={video.created_time} image={video.pictures.sizes[3].link_with_play_button}/>
-                                    );
+                                <div className="item__content item__content--related">
+                                    <p>If you enjoyed this demo you might also like:</p>
+                                    <a className="media-item" href="http://tympanus.net/Tutorials/SlidingHeaderLayout/">
+                                        <img className="media-item__img" src="public/css/portfolio/img/related/SlidingHeaderLayout.jpg" />
+                                        <h3 className="media-item__title">Sliding Header Layout</h3>
+                                    </a>
+                                    <a className="media-item" href="http://tympanus.net/Development/ScatteredPolaroidsGallery/">
+                                        <img className="media-item__img" src="public/css/portfolio/img/related/ScatteredPolaroidGallery.jpg" />
+                                        <h3 className="media-item__title">Scattered Polaroid Gallery</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="stack">
+                            <h2 className="stack-title"><a href="#" data-text="Miscellaneous"><span>Miscellaneous</span></a></h2>
+                            <div className="item">
+                                <div className="item__content">
+                                    <img src="public/css/portfolio/img/type2/1.jpg" alt="img01" />
+                                    <h3 className="item__title">Chambray fingerstache <span className="item__date">05/05/2015</span></h3>
+                                    <div className="item__details">
+                                        <ul>
+                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
+                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
+                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
+                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
+                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="item">
+                                <div className="item__content">
+                                    <img src="public/css/portfolio/img/type2/2.jpg" alt="img02" />
+                                    <h3 className="item__title">Chia pop-up meh <span className="item__date">05/05/2015</span></h3>
+                                    <div className="item__details">
+                                        <ul>
+                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
+                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
+                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
+                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
+                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="item">
+                                <div className="item__content">
+                                    <img src="public/css/portfolio/img/type2/3.jpg" alt="img03" />
+                                    <h3 className="item__title">Butcher organic ennui <span className="item__date">05/05/2015</span></h3>
+                                    <div className="item__details">
+                                        <ul>
+                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
+                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
+                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
+                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
+                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="item">
+                                <div className="item__content">
+                                    <img src="public/css/portfolio/img/type2/4.jpg" alt="img04" />
+                                    <h3 className="item__title">Four loko slow-carb Austin <span className="item__date">05/05/2015</span></h3>
+                                    <div className="item__details">
+                                        <ul>
+                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
+                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
+                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
+                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
+                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="item">
+                                <div className="item__content">
+                                    <img src="public/css/portfolio/img/type2/5.jpg" alt="img05" />
+                                    <h3 className="item__title">Biodiesel freegan cardigan <span className="item__date">05/05/2015</span></h3>
+                                    <div className="item__details">
+                                        <ul>
+                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
+                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
+                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
+                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
+                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
+                                        </ul>
+                                    </div>
+                                    <p>Images by <a href="https://www.flickr.com/photos/deanhochman/">Dean Hochman</a></p>
+                                </div>
+                            </div>
+                            <div className="item">
 
-                                })}
+                                <div className="item__content item__content--related">
+                                    <p>If you enjoyed this demo you might also like:</p>
+                                    <a className="media-item" href="http://tympanus.net/Tutorials/SlidingHeaderLayout/">
+                                        <img className="media-item__img" src="public/css/portfolio/img/related/SlidingHeaderLayout.jpg" />
+                                        <h3 className="media-item__title">Sliding Header Layout</h3>
+                                    </a>
+                                    <a className="media-item" href="http://tympanus.net/Development/ScatteredPolaroidsGallery/">
+                                        <img className="media-item__img" src="public/css/portfolio/img/related/ScatteredPolaroidGallery.jpg" />
+                                        <h3 className="media-item__title">Scattered Polaroid Gallery</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="stack">
+                            <h2 className="stack-title"><a href="#" data-text="Wildlife"><span>Wildlife</span></a></h2>
+                            <div className="item">
+                                <div className="item__content">
+                                    <img src="public/css/portfolio/img/type4/1.jpg" alt="img01" />
+                                    <h3 className="item__title">Kickstarter keffiyeh <span className="item__date">05/05/2015</span></h3>
+                                    <div className="item__details">
+                                        <ul>
+                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
+                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
+                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
+                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
+                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="item">
+                                <div className="item__content">
+                                    <img src="public/css/portfolio/img/type4/2.jpg" alt="img02" />
+                                    <h3 className="item__title">Heirloom commodo migas <span className="item__date">05/05/2015</span></h3>
+                                    <div className="item__details">
+                                        <ul>
+                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
+                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
+                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
+                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
+                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="item">
+                                <div className="item__content">
+                                    <img src="public/css/portfolio/img/type4/3.jpg" alt="img03" />
+                                    <h3 className="item__title">Austin banjo swag <span className="item__date">05/05/2015</span></h3>
+                                    <div className="item__details">
+                                        <ul>
+                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
+                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
+                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
+                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
+                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="item">
+                                <div className="item__content">
+                                    <img src="public/css/portfolio/img/type4/4.jpg" alt="img04" />
+                                    <h3 className="item__title">Small batch farm-to-table <span className="item__date">05/05/2015</span></h3>
+                                    <div className="item__details">
+                                        <ul>
+                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
+                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
+                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
+                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
+                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="item">
+                                <div className="item__content">
+                                    <img src="public/css/portfolio/img/type4/5.jpg" alt="img05" />
+                                    <h3 className="item__title">Ethical leggings semiotics <span className="item__date">05/05/2015</span></h3>
+                                    <div className="item__details">
+                                        <ul>
+                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
+                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
+                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
+                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
+                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
+                                        </ul>
+                                    </div>
+                                    <p>Images by <a href="https://www.flickr.com/photos/usfwsendsp/">USFWS Endangered Species</a></p>
+                                </div>
+                            </div>
 
                         </div>
-
                     </div>
 
-                </section>
+                </div>
+
+
             </div>
         );
     }

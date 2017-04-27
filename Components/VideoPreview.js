@@ -1,5 +1,5 @@
 import React from 'react';
-import '../public/css/portfolio.css';
+// import '../public/css/portfolio.css';
 
 var VideoPreview = React.createClass({
 
