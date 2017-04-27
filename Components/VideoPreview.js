@@ -10,35 +10,21 @@ var VideoPreview = React.createClass({
 
             <div className="VideoPreview">
 
-                <article className="brick entry format-video">
-
-                    <div className="entry-thumb video-image">
-                        <a href="#" data-lity>
-                            <img src={this.props.image} alt="bokeh"/>
-                        </a>
-                    </div>
-
-                    <div className="entry-text">
-                        <div className="entry-header">
-
-                            <div className="entry-meta">
-                                <span className="cat-links">
-                                    <a href="#">Design</a>
-                                    <a href="#">Branding</a>
-                                </span>
-                            </div>
-
-                            <h1 className="entry-title">
-                                <a href="single-video.html">{this.props.name}</a>
-                            </h1>
-
-                        </div>
-                        <div className="entry-excerpt">
-                            {this.props.description}
+                <div className="item">
+                    <div className="item__content">
+                        <img src="public/css/portfolio/img/type1/1.jpg" alt="img01" />
+                        <h3 className="item__title">Hoodie stumptown kitsch <span className="item__date">05/05/2015</span></h3>
+                        <div className="item__details">
+                            <ul>
+                                <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
+                                <li><i className="ion ion-ios-eye-outline"></i><span>22.5mm</span></li>
+                                <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
+                                <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
+                                <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
+                            </ul>
                         </div>
                     </div>
-
-                </article>
+                </div>
 
             </div>
         );

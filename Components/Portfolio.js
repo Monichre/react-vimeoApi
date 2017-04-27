@@ -23,16 +23,29 @@ var Portfolio = React.createClass({
     componentDidMount: function(){
         var _this = this;
         var lib = new Vimeo(_this.defaultProps.clientID, _this.defaultProps.clientSecret, _this.defaultProps.accessToken);
+        var publicVideos = [];
 
         lib.request({
             path : '/me/videos'
         }, (err, body, status_code, headers) => {
             if (!err) {
-                _this.setState({
-                    videos: body.data
-
+                var allVideos = body.data;
+                allVideos.forEach(function(video){
+                var index = allVideos.indexOf(video);
+                console.log(video.privacy.view);
+                    if (video.privacy.view === "nobody") {
+                        allVideos.splice(index, 1);
+                    } else {
+                        publicVideos.push(video);
+                    }
                 });
-                console.log(this.state.videos);
+                console.log(publicVideos);
+
+                _this.setState({
+                    videos: publicVideos
+                    })
+
+
 
             } else {
                 console.log(err);
@@ -55,97 +68,14 @@ var Portfolio = React.createClass({
                 <div className="stack-slider">
                     <div className="stacks-wrapper">
                         <div className="stack">
-                            <h2 className="stack-title"><a href="#" data-text="Portraits"><span>Portraits</span></a></h2>
-                            <div className="item">
-                                <div className="item__content">
-                                    <img src="public/css/portfolio/img/type1/1.jpg" alt="img01" />
-                                    <h3 className="item__title">Hoodie stumptown kitsch <span className="item__date">05/05/2015</span></h3>
-                                    <div className="item__details">
-                                        <ul>
-                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
-                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5mm</span></li>
-                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
-                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
-                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="item">
-                                <div className="item__content">
-                                    <img src="public/css/portfolio/img/type1/2.jpg" alt="img02" />
-                                    <h3 className="item__title">Retro irony sartorial <span className="item__date">05/05/2015</span></h3>
-                                    <div className="item__details">
-                                        <ul>
-                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
-                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
-                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
-                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
-                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="item">
-                                <div className="item__content">
-                                    <img src="public/css/portfolio/img/type1/3.jpg" alt="img03" />
-                                    <h3 className="item__title">Stumptown Brooklyn <span className="item__date">05/05/2015</span></h3>
-                                    <div className="item__details">
-                                        <ul>
-                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
-                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
-                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
-                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
-                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="item">
-                                <div className="item__content">
-                                    <img src="public/css/portfolio/img/type1/4.jpg" alt="img04" />
-                                    <h3 className="item__title">Blog dreamcatcher squid  <span className="item__date">05/05/2015</span></h3>
-                                    <div className="item__details">
-                                        <ul>
-                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
-                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
-                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
-                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
-                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="item">
-                                <div className="item__content">
-                                    <img src="public/css/portfolio/img/type1/5.jpg" alt="img05" />
-                                    <h3 className="item__title">Meditation pickled mumblecore <span className="item__date">05/05/2015</span></h3>
-                                    <div className="item__details">
-                                        <ul>
-                                            <li><i className="ion ion-ion-ios-camera-outline"></i><span>Canon PowerShot S95</span></li>
-                                            <li><i className="ion ion-ios-eye-outline"></i><span>22.5 mm</span></li>
-                                            <li><i className="ion ion-ios-color-wand-outline"></i><span>&fnof;/5.6</span></li>
-                                            <li><i className="ion ion-exposure_time"></i><span>1/1000</span></li>
-                                            <li><i className="ion ion-ios-bolt-outline"></i><span>80</span></li>
-                                        </ul>
-                                    </div>
-                                    <p>Images by <a href="https://www.flickr.com/photos/martinaphotography/">martinak15</a></p>
-                                </div>
-                            </div>
-                            <div className="item">
 
-                                <div className="item__content item__content--related">
-                                    <p>If you enjoyed this demo you might also like:</p>
-                                    <a className="media-item" href="http://tympanus.net/Tutorials/SlidingHeaderLayout/">
-                                        <img className="media-item__img" src="public/css/portfolio/img/related/SlidingHeaderLayout.jpg" />
-                                        <h3 className="media-item__title">Sliding Header Layout</h3>
-                                    </a>
-                                    <a className="media-item" href="http://tympanus.net/Development/ScatteredPolaroidsGallery/">
-                                        <img className="media-item__img" src="public/css/portfolio/img/related/ScatteredPolaroidGallery.jpg" />
-                                        <h3 className="media-item__title">Scattered Polaroid Gallery</h3>
-                                    </a>
-                                </div>
-                            </div>
+                            <h2 className="stack-title"><a href="#" data-text="Portraits"><span>Featured</span></a></h2>
+
+                        {this.state.videos.map(function(video){
+                            return (<VideoPreview />);
+                        })}
+
+
                         </div>
                         <div className="stack">
                             <h2 className="stack-title"><a href="#" data-text="Landscape"><span>Landscape</span></a></h2>
