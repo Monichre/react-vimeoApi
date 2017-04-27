@@ -27,7 +27,7 @@ body {
 	overflow: hidden;
 	position: relative;
 	overflow-y: scroll;
-	font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -66,98 +66,8 @@ button:focus {
 	flex-direction: column;
 }
 
-/* Header */
-.codrops-header {
-	padding: 1em 0;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-flex: none;
-	flex: none;
-	margin: 0 10px;
-	z-index: 1000;
-	position: relative;
-}
 
-.codrops-header h1 {
-	font-size: 1em;
-	margin: 0 auto 0 0;
-	padding: 0.5em;
-}
 
-.codrops-header h1 span {
-	color: #585558;
-}
-
-.codrops-links {
-	position: relative;
-	display: inline-block;
-	white-space: nowrap;
-	text-align: center;
-	margin: 0;
-	height: 40px;
-	-webkit-flex: none;
-	flex: none;
-}
-
-.codrops-links::after {
-	position: absolute;
-	top: 0;
-	left: 50%;
-	width: 1px;
-	height: 100%;
-	min-height: 20px;
-	background: #585558;
-	content: '';
-	-webkit-transform: rotate3d(0, 0, 1, 22.5deg);
-	transform: rotate3d(0, 0, 1, 22.5deg);
-}
-
-.codrops-icon {
-	display: inline-block;
-	margin: 0.5em;
-	width: 1.5em;
-	text-decoration: none;
-}
-
-.codrops-icon:before {
-	margin: 0 5px;
-	text-transform: none;
-	font-weight: normal;
-	font-style: normal;
-	font-variant: normal;
-	font-family: 'codropsicons';
-	line-height: 1;
-	speak: none;
-	-webkit-font-smoothing: antialiased;
-}
-
-.codrops-icon span {
-	display: none;
-}
-
-.codrops-icon--drop:before {
-	content: "\e001";
-}
-
-.codrops-icon--prev:before {
-	content: "\e004";
-}
-
-/* Menu */
-.menu {
-	font-size: 1em;
-	padding: 0.5em;
-}
-
-.menu__item {
-	font-weight: bold;
-	margin: 0 1em;
-}
-
-.menu__item--current {
-	color: #ef5350;
-}
 
 /* Hero image */
 .hero {
@@ -171,7 +81,7 @@ button:focus {
 }
 
 .hero > div {
-	background: #212121 url(/public/img/jud.jpg) no-repeat 50% 0;
+	background: #212121 url(/public/img/jud-left.jpg) no-repeat 50% 0;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
@@ -417,7 +327,7 @@ button:focus {
 }
 
 .is-selected .stack-title a span {
-	color: #ef5350;
+	color: #fff4d7!important
 }
 
 .stack-title a::after,

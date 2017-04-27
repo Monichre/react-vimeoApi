@@ -12,7 +12,7 @@ var VideoPreview = React.createClass({
 
                 <div className="item">
                     <div className="item__content">
-                        <img src="public/css/portfolio/img/type1/1.jpg" alt="img01" />
+                        <img src={this.props.image} alt="img01" />
                         <h3 className="item__title">Hoodie stumptown kitsch <span className="item__date">05/05/2015</span></h3>
                         <div className="item__details">
                             <ul>

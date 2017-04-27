@@ -1,5 +1,6 @@
 import React from 'react';
 var Vimeo= require('vimeo').Vimeo;
+var moment = require('moment');
 import '../public/css/portfolio/css/flickity.css';
 import '../public/css/portfolio/css/portfolio-alternate.css';
 import '../public/css/nav.css';
@@ -12,7 +13,9 @@ var Portfolio = React.createClass({
     defaultProps: {
         clientID: 'a403a67f112f44d9826223d299688cffcdc4c794',
         clientSecret: '4ddwI9d7nHrcRcPlM5UE4YyNTZ9yjCCthnz+9CwY4Hdg5JkaYrOWRu24kgmnq6qmkDXNZ2EejDZ6ZmgmGM6pmMX+m02NeAPx4fty7Dc5rMCwIT1iZ/+T5Goz0xx4aoFV',
-        accessToken: '4136be9e66246191c7df6e0f2249ddec'
+        accessToken: '4136be9e66246191c7df6e0f2249ddec',
+        mostPopularVideos: [],
+        featuredVideos: []
     },
 
     getInitialState: function(){
@@ -39,14 +42,24 @@ var Portfolio = React.createClass({
                         publicVideos.push(video);
                     }
                 });
-                console.log(publicVideos);
+                publicVideos.forEach(function(video){
+                    var formatCreatedTime = moment(video.created_time);
+                    console.log(formatCreatedTime.format('MM-DD-YYYY'));
+                    var now = moment().format('MM-DD-YYYY');
+                    if (video.stats.plays > 5) {
+                        _this.defaultProps.mostPopularVideos.push(video);
+                    } else if (formatCreatedTime.add(30, 'days').isBefore(now)){
+                        _this.defaultProps.featuredVideos.push(video);
+                    }
+                });
 
                 _this.setState({
                     videos: publicVideos
                     })
 
 
-
+                console.log(_this.defaultProps.featuredVideos);
+                console.log(_this.defaultProps.mostPopularVideos);
             } else {
                 console.log(err);
             }
@@ -72,7 +85,7 @@ var Portfolio = React.createClass({
                             <h2 className="stack-title"><a href="#" data-text="Portraits"><span>Featured</span></a></h2>
 
                         {this.state.videos.map(function(video){
-                            return (<VideoPreview />);
+                            return (<VideoPreview image={video.pictures.sizes[3].link} />);
                         })}
 
 
