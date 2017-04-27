@@ -38,6 +38,9 @@
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+        <!-- Ionic Icons -->
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
         <!-- Animate.css -->
         <link rel="stylesheet" href="public/css/animate.css">
         <!-- Bootstrap  -->
@@ -114,9 +117,10 @@
         		    	closeNav();
         		  	}
         		}
+
         		function openNav(){
         			open = true;
-        		    button.innerHTML = "X";
+        		    button.innerHTML = "<i class='ion-android-locate'></i>";
         		    classie.add(overlay, 'on-overlay');
         		    classie.add(wrapper, 'opened-nav');
                     console.log("Im open");
@@ -132,7 +136,6 @@
             });
 
     </script>
-
 
 
     <!-- Main JS (Do not remove) -->

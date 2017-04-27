@@ -20,6 +20,9 @@ a {
 }
 
 a:hover,
-a:focus, .fa {
+a:focus, .ion, .fa {
 	color: #fff;
 }
+
+i.ion {
+	font-size: 18px; }

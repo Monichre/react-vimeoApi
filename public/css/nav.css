@@ -127,7 +127,7 @@
 
 .csstransforms .cn-wrapper li a span {
   font-size: 1.1em;
-  opacity: 0.7;
+  /*opacity: 0.7;*/
 }
 
 /* for a central angle x, the list items must be skewed by 90-x degrees
