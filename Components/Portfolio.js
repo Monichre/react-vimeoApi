@@ -43,7 +43,7 @@ var Portfolio = React.createClass({
 
                 allVideos.forEach(function(video){
                     var index = allVideos.indexOf(video);
-                        if (video.privacy.view === "nobody") {
+                        if (video.privacy.view === "nobody" || video.privacy.view === "password") {
                             allVideos.splice(index, 1);
                         } else {
                             publicVideos.push(video);
@@ -54,13 +54,16 @@ var Portfolio = React.createClass({
                     var formatCreatedTime = moment(video.created_time),
                         now = moment();
 
-
-                    if (video.stats.plays > 5) {
-                        popVids.push(video);
-                    } else if (now.diff(formatCreatedTime, 'days') < 30 ){
+                    if (now.diff(formatCreatedTime, 'days') < 30 ){
                         featVids.push(video);
                     }
+
+                    if (video.stats.plays > 10) {
+                        popVids.push(video);
+                    }
+
                 });
+                console.log(featVids);
 
                 _this.setState({
                     videos: publicVideos,
