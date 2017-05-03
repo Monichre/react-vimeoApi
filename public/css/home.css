@@ -14,8 +14,9 @@
 	z-index: 100;
 }
 
-.codrops-header__title {
-	font-size: 1em;
+.Home .codrops-header__title {
+	font-size: 1.5em;
+	text-transform: uppercase;
 	font-weight: 400;
 	margin: 0;
 	padding: 0 1em 0 0.25em;
@@ -33,7 +34,7 @@
 	justify-content: center;
 	text-align: center;
 	white-space: nowrap;
-	font-size: 0.85em;
+	font-size: 1.5em;
 }
 
 .codrops-links::after {
@@ -53,6 +54,7 @@
 
 .demos {
 	margin: 0 1em 0 auto;
+	font-size: 14px;
 }
 
 .demo {
@@ -247,8 +249,9 @@
 
 .link--sponsor {
 	position: absolute;
+	font-size: 1.25em;
 	left: 0;
-	margin: 0 0 2em 2em;
+	margin: 0 0 2em 1em;
 	bottom: 0;
 	color: #fff4d7!important;
 	letter-spacing: 2px;
@@ -263,22 +266,13 @@
 	width: 100%;
 	padding: 0 1em;
 	margin: 0;
-	font-size: 2em;
+	font-size: 5em;
 	letter-spacing: 0.2em;
 	text-indent: 0.2em;
 	text-transform: uppercase;
 	color: #fff;
 }
 
-/*.overlay {
-	position: fixed;
-	top: 0;
-	right: 0;
-	width: 50%;
-	height: 100%;
-	background: #A8A9C8 url(../images/bg.jpg);
-	background-size: cover;
-}*/
 
 /* Themes */
 
@@ -294,6 +288,7 @@
 .Home .slide:first-child .slide__title,
 .Home .slideshow__nav .btn:first-child {
 	color: #facb7a;
+	font-family: "Fjalla One", sans-serif;
 }
 
 .Home .slide:nth-child(2) .slide__title,

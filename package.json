@@ -13,7 +13,9 @@
   "dependencies": {
     "file-system": "^2.2.2",
     "react": "^15.5.4",
+    "react-anime": "^0.3.4",
     "react-dom": "^15.5.4",
+    "react-player": "^0.16.0",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "vimeo": "^1.2.1"

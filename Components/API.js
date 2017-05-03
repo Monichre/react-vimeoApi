@@ -26,8 +26,7 @@ var API = React.createClass({
                 _this.setState({
                     videos: body.data
                 });
-                console.log(videos);
-
+                
             } else {
                 console.log(err);
             }

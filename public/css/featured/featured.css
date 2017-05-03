@@ -53,10 +53,11 @@ a:focus {
 }
 
 .deco__text {
-	font-size: 0.8em;
+	font-size: 2em;
 	line-height: 1;
 	margin: 0;
-	color: #bcb8e8;
+	color: #333;
+	font-family: 'Fjalla One', sans-serif;
 }
 
 /* Header */
@@ -70,10 +71,10 @@ a:focus {
 }
 
 .FeaturedVideo .codrops-header__info {
-	font-family: 'Playfair Display', serif;
-	font-size: 2.5em;
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 5em;
 	font-weight: 700;
-	font-style: italic;
+	color: #333;
 	position: relative;
 	max-width: 400px;
 	margin: auto 10vw 0 0;
@@ -274,15 +275,26 @@ a:focus {
 
 .poster__number {
 	font-size: 5em;
-	font-weight: bold;
+
 	line-height: 0.7;
 	position: absolute;
 	bottom: 0;
 	left: calc(100% - 50px + 5px);
-	color: lavender;
+	color: #fff;
 	padding-bottom: 5px;
-	border-bottom: 5px solid #fff;
+
 }
+
+.editing .poster__number {
+	font-size: 5em;
+
+	line-height: 1;
+	position: absolute;
+	bottom: 0;
+	left: 80%;
+
+}
+
 
 .poster__title {
 	font-size: 6em;
@@ -335,6 +347,7 @@ a:focus {
 .demo-2 .codrops-header__info::after {
 	content: "'17";
 	color: #fff;
+	font-size: 7em;
 }
 
 .demo-2 .codrops-header__deco,
@@ -345,7 +358,8 @@ a:focus {
 
 .demo-2 .deco__text,
 .demo-2 .demos__text {
-	color: #d8c184;
+	color: #333;
+	font-family: 'Fjalla One', sans-serif;
 }
 
 .demo-2 .demo--current::before {
@@ -411,59 +425,6 @@ a:focus {
 	color: #fbf9fa;
 }
 
-.demo-3 .content {
-	background: url(img/img4.jpg) no-repeat 50% 20%;
-	background-size: cover;
-}
-
-.demo-3 .codrops-links {
-	align-self: flex-end;
-	margin: 1.5em 1.5em auto;
-}
-
-.demo-3 .demos {
-	margin: 1em 0 0;
-}
-
-.demo-3 .demo:first-child {
-	margin: 0;
-}
-
-.demo-3 .demo.demo--current {
-	color: #2a3137;
-}
-
-.demo-3 .demo--current::before {
-	background: #fc0;
-}
-
-.demo-3 .btn--back {
-	color: #6c7d8c;
-	top: 0.5em;
-	right: 0.5em;
-}
-
-.demo-3 .btn--back .icon {
-	transform: rotate(-90deg);
-}
-
-.demo-3 .codrops-header__deco {
-	font-size: 2.25em;
-	position: absolute;
-	right: -0.575em;
-	bottom: 2em;
-	color: #fc0;
-}
-
-.demo-3 .codrops-header::after {
-	content: '03';
-	font-size: 5em;
-	font-weight: bold;
-	position: absolute;
-	top: 0;
-	left: -40px;
-	color: #fff;
-}
 
 .box {
 	position: relative;
@@ -625,7 +586,8 @@ a:focus {
 	margin: 0;
 	height: 100%;
 	font-weight: lighter;
-	font-size: 14px;
+	font-size: 16px;
+	letter-spacing: 2px;
 	line-height: 1;
 	display: flex;
 	flex-direction: column;
