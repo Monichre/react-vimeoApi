@@ -2,7 +2,7 @@ import React from 'react';
 import '../public/css/home.css';
 
 // Sub-Components
-import FeaturedVideo from './FeaturedVideo.js';
+import About from './About.js';
 
 
 var Home = React.createClass({
@@ -47,8 +47,8 @@ var Home = React.createClass({
 
                 </div>
 
-                <FeaturedVideo />
-                
+                <About />
+
             </div>
 
 
