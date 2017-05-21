@@ -1,4 +1,5 @@
 import React from 'react';
+import lazyCache from 'react-lazy-cache';
 
 // Packahes
 var Vimeo= require('vimeo').Vimeo;
@@ -63,13 +64,24 @@ var Portfolio = React.createClass({
                     }
 
                 });
-                console.log(featVids);
+
+                // Set Local Storage Variables
+                localStorage.setItem('allVideos', JSON.stringify(allVideos));
+                localStorage.setItem('popVids', JSON.stringify(popVids));
+                localStorage.setItem('featVids', JSON.stringify(featVids));
+
+                console.log( JSON.parse( localStorage.getItem( 'allVideos' ) ) );
+                console.log( JSON.parse( localStorage.getItem( 'popVids' ) ) );
+                console.log( JSON.parse( localStorage.getItem( 'featVids' ) ) );
+
 
                 _this.setState({
                     videos: publicVideos,
                     mostPopularVideos: popVids,
                     featuredVideos: featVids
                     })
+
+
 
             } else {
                 console.log(err);

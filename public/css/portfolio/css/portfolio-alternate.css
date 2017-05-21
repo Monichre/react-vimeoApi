@@ -21,7 +21,7 @@
 
 /* General styles */
 body {
-	background: #212121;
+	
 	color: #fff;
 	font-size: 1em;
 	overflow: hidden;
@@ -453,9 +453,8 @@ button:focus {
 }
 
 .item__date {
-	font-size: 0.5em;
-	/*vertical-align: middle;*/
-	/*display: inline-block;*/
+
+
 	color: #4F4E4E;
 	margin-left: 5px;
 }
@@ -465,16 +464,24 @@ button:focus {
 	margin: 0 0 2em;
 }
 
-.item__details ul {
+/*.item__details {
+	position: absolute;
+	top: 40%;
+	margin: 0 0 0 1em;
+	z-index: 1000;
+	left:0;
+	width: 40%;
+}*/
+
+.item__details ul:nth-of-type(1) {
 
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-.item__details ul li {
+.item__details li {
 	font-size: 16px;
-	display: block;
 	padding: 3px 0;
 	color: #9d9d9d;
 	white-space: nowrap;
@@ -483,6 +490,23 @@ button:focus {
 	transform: translate3d(0,20px,0);
 	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
 	transition: transform 0.5s, opacity 0.5s;
+}
+.sublist-trigger i {
+	font-size: 30px;
+	text-shadow: 1px 1px 1px gray;
+
+}
+
+
+.item__sublist {
+	opacity: 0;
+	transition: all .5s;
+}
+.item__sublist li {
+	margin-top: 10px;
+}
+.sublist-trigger:hover .item__sublist {
+	opacity: 1;
 }
 
 .item__details ul li .ion {
@@ -623,10 +647,10 @@ button:focus {
 @media screen and (min-width: 65em) {
 	.item__details {
 		position: absolute;
-		top: 0;
+		top: 50px;
 		margin: 0 0 0 1em;
 		z-index: 1000;
-		left: 100%;
+		left:0;
 		width: 40%;
 	}
 }
@@ -675,7 +699,7 @@ button:focus {
 }
 
 .item__content div:nth-child(1), .video {
-	width: auto;
+	width: 100%;
 	display: block;
 	margin: auto;
 }

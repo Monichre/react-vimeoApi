@@ -10,7 +10,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 body {
 	font-family: 'Oswald', sans-serif;
 	color: #909090;
-	/*background: rgb(28,28,28);*/
+	background: #1c1c1c;
 }
 
 a {
@@ -26,3 +26,6 @@ a:focus, .ion, .fa {
 
 i.ion {
 	font-size: 18px; }
+.hide {
+	display: none;
+}
