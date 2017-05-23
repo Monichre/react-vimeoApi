@@ -29,7 +29,7 @@ var Portfolio = React.createClass({
             featuredVideos: []
         }
     },
-    componentDidMount: function(){
+    apiCall: function(){
         var _this = this;
         var lib = new Vimeo(_this.defaultProps.clientID, _this.defaultProps.clientSecret, _this.defaultProps.accessToken);
         var publicVideos = [];
@@ -50,6 +50,7 @@ var Portfolio = React.createClass({
                             publicVideos.push(video);
                         }
                 });
+                localStorage.setItem('publicVideos', JSON.stringify(publicVideos));
 
                 publicVideos.forEach(function(video){
                     var formatCreatedTime = moment(video.created_time),
@@ -66,11 +67,11 @@ var Portfolio = React.createClass({
                 });
 
                 // Set Local Storage Variables
-                localStorage.setItem('allVideos', JSON.stringify(allVideos));
+                localStorage.setItem('publicVideos', JSON.stringify(publicVideos));
                 localStorage.setItem('popVids', JSON.stringify(popVids));
                 localStorage.setItem('featVids', JSON.stringify(featVids));
 
-                console.log( JSON.parse( localStorage.getItem( 'allVideos' ) ) );
+                console.log( JSON.parse( localStorage.getItem( 'publicVideos' ) ) );
                 console.log( JSON.parse( localStorage.getItem( 'popVids' ) ) );
                 console.log( JSON.parse( localStorage.getItem( 'featVids' ) ) );
 
@@ -81,16 +82,24 @@ var Portfolio = React.createClass({
                     featuredVideos: featVids
                     })
 
-
-
             } else {
                 console.log(err);
             }
         });
     },
+    componentWillMount(){
+        console.log(this.state.videos);
+        console.log('These should be public videos' + JSON.parse( localStorage.getItem( 'publicVideos' ) ) );
+        if(localStorage){
+            console.log( JSON.parse( localStorage.getItem( 'publicVideos' ) ) );
+            console.log( JSON.parse( localStorage.getItem( 'popVids' ) ) );
+            console.log( JSON.parse( localStorage.getItem( 'featVids' ) ) );
+        } else {
+            this.apiCall();
+        }
+    },
 
     render() {
-
 
         return (
 
