@@ -1,14 +1,19 @@
 import React from 'react';
+
+import { connect } from 'react-redux'
+import { addTodo } from '../actions/actions.js'
+
+
 import '../public/css/home.css';
 
 // Sub-Components
-import About from './About.js';
+// import About from './About.js';
 
 
-var Home = React.createClass({
+let Home = ({dispatch}) => {
 
 
-    render() {
+    render = () => {
 
         return (
             <div className="no-js">
@@ -47,7 +52,7 @@ var Home = React.createClass({
 
                 </div>
 
-                <About />
+                // <About />
 
             </div>
 
@@ -55,8 +60,8 @@ var Home = React.createClass({
 
         );
     }
-});
+}
 
-
+Home = connect()(Home)
 
 export default Home;
