@@ -7,13 +7,13 @@ import { addTodo } from '../actions/actions.js'
 import '../public/css/home.css';
 
 // Sub-Components
-// import About from './About.js';
+import About from './About.js';
 
 
-let Home = ({dispatch}) => {
+let Home = () => {
 
 
-    render = () => {
+    // render = () => {
 
         return (
             <div className="no-js">
@@ -52,16 +52,14 @@ let Home = ({dispatch}) => {
 
                 </div>
 
-                // <About />
+                <About />
 
             </div>
 
 
 
         );
-    }
+    // }
 }
-
-Home = connect()(Home)
 
 export default Home;

@@ -1,30 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Provider from 'react-redux';
-import {createStore, applyMiddleware, compose} from 'redux';
+
+
 
 // Router
 import { BrowserRouter, Route, IndexRoute, Link } from 'react-router-dom';
 
-import dataService from './reducers/dataService.js';
+
 
 // Components
 import Home from './Components/Home.js';
-// import Portfolio from './Components/Portfolio.js';
+import Portfolio from './Components/Portfolio.js';
 
 // Styles
 import './public/css/nav.css';
 
-let store = createStore(dataService);
+
 
 ReactDOM.render((
-    <Provider store={store}>
         <BrowserRouter>
             <div className="App">
                 <div className="AppChildren">
                     <Route exact path="/" component={Home}/>
-
-
+                    <Route exact path="/portfolio" component={Portfolio}/>
                 </div>
                 <div className="component">
                     <button className="cn-button" id="cn-button"><i className="fa fa-anchor" aria-hidden="true"></i></button>
@@ -41,6 +39,5 @@ ReactDOM.render((
                 </div>
             </div>
         </BrowserRouter>
-    </Provider>
 
     ), document.getElementById('root'));
