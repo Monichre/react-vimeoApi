@@ -21,10 +21,33 @@ import '../public/css/nav.css';
 import VideoPreview from './VideoPreview.js';
 
 
-let Portfolio = () => {
+class Portfolio extends React.Component {
 
-    render = () => {
+    componentWillMount() {
+        console.log("component will mount");
+        store.dispatch({type:'REQUEST_VIDEOS'});
+    }
+    componentDidMount(){
 
+        if(localStorage.length) {
+
+            console.log(localStorage);
+        }else {
+            console.log('Im dispatching the get videos action');
+
+            var data = store.getState();
+
+            this.setState({
+                data: data
+            }, function(){
+                console.log(data);
+            });
+        }
+    }
+    componentWillUpdate(){
+        // console.log(component will uupdate);
+    }
+    render () {
         return (
             <Provider store={store}>
 
@@ -39,7 +62,7 @@ let Portfolio = () => {
                         <div className="stacks-wrapper">
                             <div className="stack">
                                 <h2 className="stack-title"><a href="#" data-text="All"><span>All</span></a></h2>
-                                {this.state.videos.map(function(video){
+                                {this.state.data.videos.map(function(video){
 
                                     return (<VideoPreview title={video.name} description={video.description}  image={video.pictures.sizes[3].link} date={video.created_time} plays={video.stats.plays} likes={video.metadata.connections.likes.total} watchLink={video.link}/>);
                                 })}
@@ -47,7 +70,7 @@ let Portfolio = () => {
 
                             <div className="stack">
                                 <h2 className="stack-title"><a href="#" data-text="Featured"><span>Featured</span></a></h2>
-                                    {this.state.featuredVideos.map(function(video){
+                                    {this.state.data.featuredVideos.map(function(video){
 
                                         return (<VideoPreview title={video.name} description={video.description} image={video.pictures.sizes[3].link} date={video.created_time} plays={video.stats.plays} likes={video.metadata.connections.likes.total} watchLink={video.link}/>);
                                     })}
@@ -55,7 +78,7 @@ let Portfolio = () => {
 
                             <div className="stack">
                                 <h2 className="stack-title"><a href="#" data-text="Most Popular"><span>Most Popular</span></a></h2>
-                                    {this.state.mostPopularVideos.map(function(video){
+                                    {this.state.data.mostPopularVideos.map(function(video){
 
                                         return (<VideoPreview title={video.name} description={video.description} image={video.pictures.sizes[3].link} date={video.created_time} plays={video.stats.plays} likes={video.metadata.connections.likes.total} watchLink={video.link}/>);
                                     })}
@@ -68,13 +91,11 @@ let Portfolio = () => {
 
                 </div>
             </Provider>
-
-
-
-
         );
+
+
     }
+
 }
 
-// Portfolio = connect()(Portfolio)
 export default Portfolio;
