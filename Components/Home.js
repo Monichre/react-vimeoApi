@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { connect } from 'react-redux'
-import { addTodo } from '../actions/actions.js'
+import { actions } from '../actions/actions.js'
 
 
 import '../public/css/home.css';
@@ -10,10 +10,10 @@ import '../public/css/home.css';
 import About from './About.js';
 
 
-let Home = () => {
+class Home extends React.Component {
 
 
-    // render = () => {
+    render() {
 
         return (
             <div className="no-js">
@@ -59,7 +59,6 @@ let Home = () => {
 
 
         );
-    // }
+    }
 }
-
 export default Home;

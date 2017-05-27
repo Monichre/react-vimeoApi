@@ -1,16 +1,13 @@
 import React from 'react';
-// import {connect} from 'react-redux';
-import REQUEST_VIDEOS from '../actions/actions.js';
+import {connect} from 'react-redux';
+import {REQUEST_VIDEOS, RECEIVE_VIDEOS} from '../actions/actions.js';
+import {videos} from '../reducers/reducer.js';
 import Provider from 'react-redux';
 import {createStore, applyMiddleware, compose} from 'redux';
-import dataService from '../reducers/dataService.js';
+import apiCall from '../services/api.js';
 
 // Packages
-let store = createStore(dataService);
-
-
-var Vimeo= require('vimeo').Vimeo;
-var moment = require('moment');
+// let store = createStore(apiCall, {}, applyMiddleware(apiCall));
 
 // Styles
 import '../public/css/portfolio/css/flickity.css';
@@ -18,14 +15,22 @@ import '../public/css/portfolio/css/portfolio-alternate.css';
 import '../public/css/nav.css';
 
 // Sub-Components
-import VideoPreview from './VideoPreview.js';
+// import VideoPreview from './VideoPreview.js';
 
 
 class Portfolio extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            videos: [],
+            mostPopularVideos: [],
+            featuredVideos: []
+        };
+    }
 
     componentWillMount() {
         console.log("component will mount");
-        store.dispatch({type:'REQUEST_VIDEOS'});
+
     }
     componentDidMount(){
 
@@ -33,15 +38,16 @@ class Portfolio extends React.Component {
 
             console.log(localStorage);
         }else {
+            store.dispatch(REQUEST_VIDEOS);
             console.log('Im dispatching the get videos action');
 
-            var data = store.getState();
-
-            this.setState({
-                data: data
-            }, function(){
-                console.log(data);
-            });
+            // this.setState({
+            //     videos: data.videos,
+            //     mostPopularVideos: data.mostPopularVideos,
+            //     featuredVideos: data.featuredVideos
+            // }, function(){
+            //     console.log(videos, mostPopularVideos, featuredVideos);
+            // });
         }
     }
     componentWillUpdate(){
@@ -49,7 +55,7 @@ class Portfolio extends React.Component {
     }
     render () {
         return (
-            <Provider store={store}>
+            // <Provider store={store}>
 
                 <div className="Portfolio">
                     <div className="hero">
@@ -62,26 +68,17 @@ class Portfolio extends React.Component {
                         <div className="stacks-wrapper">
                             <div className="stack">
                                 <h2 className="stack-title"><a href="#" data-text="All"><span>All</span></a></h2>
-                                {this.state.data.videos.map(function(video){
 
-                                    return (<VideoPreview title={video.name} description={video.description}  image={video.pictures.sizes[3].link} date={video.created_time} plays={video.stats.plays} likes={video.metadata.connections.likes.total} watchLink={video.link}/>);
-                                })}
                             </div>
 
                             <div className="stack">
                                 <h2 className="stack-title"><a href="#" data-text="Featured"><span>Featured</span></a></h2>
-                                    {this.state.data.featuredVideos.map(function(video){
 
-                                        return (<VideoPreview title={video.name} description={video.description} image={video.pictures.sizes[3].link} date={video.created_time} plays={video.stats.plays} likes={video.metadata.connections.likes.total} watchLink={video.link}/>);
-                                    })}
                             </div>
 
                             <div className="stack">
                                 <h2 className="stack-title"><a href="#" data-text="Most Popular"><span>Most Popular</span></a></h2>
-                                    {this.state.data.mostPopularVideos.map(function(video){
 
-                                        return (<VideoPreview title={video.name} description={video.description} image={video.pictures.sizes[3].link} date={video.created_time} plays={video.stats.plays} likes={video.metadata.connections.likes.total} watchLink={video.link}/>);
-                                    })}
                             </div>
 
                         </div>
@@ -90,12 +87,26 @@ class Portfolio extends React.Component {
 
 
                 </div>
-            </Provider>
+            // </Provider>
         );
-
 
     }
 
 }
 
 export default Portfolio;
+
+//
+//
+// {this.state.videos.map(function(video){
+//
+//     return (<VideoPreview title={video.name} description={video.description}  image={video.pictures.sizes[3].link} date={video.created_time} plays={video.stats.plays} likes={video.metadata.connections.likes.total} watchLink={video.link}/>);
+// })}
+// {this.state.featuredVideos.map(function(video){
+//
+//         return (<VideoPreview title={video.name} description={video.description} image={video.pictures.sizes[3].link} date={video.created_time} plays={video.stats.plays} likes={video.metadata.connections.likes.total} watchLink={video.link}/>);
+//     })}
+// {this.state.mostPopularVideos.map(function(video){
+//
+//         return (<VideoPreview title={video.name} description={video.description} image={video.pictures.sizes[3].link} date={video.created_time} plays={video.stats.plays} likes={video.metadata.connections.likes.total} watchLink={video.link}/>);
+//     })}

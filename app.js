@@ -1,10 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-
-
-// Router
 import { BrowserRouter, Route, IndexRoute, Link } from 'react-router-dom';
+
+import {connect} from 'react-redux';
+import {REQUEST_VIDEOS, RECEIVE_VIDEOS} from './actions/actions.js';
+import {videos} from './reducers/reducer.js';
+import {Provider, combineReducers} from 'react-redux';
+import {createStore, applyMiddleware, compose} from 'redux';
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+import apiCall from './services/api.js';
+
+let store = createStore(videos, {}, applyMiddleware(apiCall));
+
+
+
+
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import { BrowserRouter, Route, IndexRoute, Link } from 'react-router-dom';
+//
+// import {connect} from 'react-redux';
+// import {REQUEST_VIDEOS, RECEIVE_VIDEOS} from './actions/actions.js';
+// import {videos} from './reducers/reducer.js';
+// import {Provider, combineReducers} from 'react-redux';
+// import {createStore, applyMiddleware, compose} from 'redux';
+// import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+// import apiCall from './services/api.js';
+//
+// let store = createStore(combineReducers({
+//     videos,
+//     routing: routerReducer
+// }), {}, applyMiddleware(apiCall));
+//
+//
 
 
 
@@ -18,6 +46,8 @@ import './public/css/nav.css';
 
 
 ReactDOM.render((
+    <Provider store={store}>
+
         <BrowserRouter>
             <div className="App">
                 <div className="AppChildren">
@@ -39,5 +69,6 @@ ReactDOM.render((
                 </div>
             </div>
         </BrowserRouter>
+    </Provider>
 
     ), document.getElementById('root'));

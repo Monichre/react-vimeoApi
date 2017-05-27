@@ -12,22 +12,20 @@ var moment = require('moment');
         accessToken: '4136be9e66246191c7df6e0f2249ddec'
     };
 
-    const getInitialState = {
-            videos: [],
-            mostPopularVideos: [],
-            featuredVideos: []
-        };
+    // const getInitialState = {
+    //         videos: [],
+    //         mostPopularVideos: [],
+    //         featuredVideos: []
+    //     };
 
 
-export default function dataService(state=getInitialState, action){
-    console.log("Reducer receiving action: " + action);
+const apiCall = store => next => action => {
+    console.log(action);
 
+    next(action)
     switch (action.type){
-        case action.REQUEST_VIDEOS:
+        case 'REQUEST_VIDEOS':
 
-
-        apiCall = () => {
-            console.log("im doing this api call");
                   var lib = new Vimeo(defaultProps.clientID, defaultProps.clientSecret, defaultProps.accessToken);
                   var publicVideos = [];
 
@@ -65,26 +63,27 @@ export default function dataService(state=getInitialState, action){
                           localStorage.setItem('popVids', JSON.stringify(popVids));
                           localStorage.setItem('featVids', JSON.stringify(featVids));
 
-                          console.log( JSON.parse( localStorage.getItem( 'publicVideos' ) ) );
-                          console.log( JSON.parse( localStorage.getItem( 'popVids' ) ) );
-                          console.log( JSON.parse( localStorage.getItem( 'featVids' ) ) );
+                        //   console.log( JSON.parse( localStorage.getItem( 'publicVideos' ) ) );
+                        //   console.log( JSON.parse( localStorage.getItem( 'popVids' ) ) );
+                        //   console.log( JSON.parse( localStorage.getItem( 'featVids' ) ) );
 
 
 
-                              state.videos = publicVideos;
-                              state.mostPopularVideos = popVids;
-                              state.featuredVideos = featVids;
+                        const data = [publicVideos, popVids, featVids];
+                        next({
+                            type: 'RECEIVE_VIDEOS',
+                            data
+                        })
 
                       } else {
                           console.log(err);
                       }
                   })
-              };
-
-        return state;
 
         default:
-            return state;
+            break
     }
 
-}
+};
+
+export default apiCall
