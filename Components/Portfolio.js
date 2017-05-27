@@ -1,6 +1,6 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {REQUEST_VIDEOS, RECEIVE_VIDEOS} from '../actions/actions.js';
+import {dispatch, connect} from 'react-redux';
+import {sendRequestVideosDispatch, sendReceiveVideosDispatch} from '../actions/actions.js';
 import {videos} from '../reducers/reducer.js';
 import Provider from 'react-redux';
 import {createStore, applyMiddleware, compose} from 'redux';
@@ -38,7 +38,7 @@ class Portfolio extends React.Component {
 
             console.log(localStorage);
         }else {
-            store.dispatch(REQUEST_VIDEOS);
+            sendRequestVideosDispatch;
             console.log('Im dispatching the get videos action');
 
             // this.setState({

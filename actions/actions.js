@@ -1,12 +1,13 @@
-export const REQUEST_VIDEOS = () => {
+function REQUEST_VIDEOS(){
+    const action = {
         type:'REQUEST_VIDEOS'
-
+    }
 }
-
-
-export const RECEIVE_VIDEOS = (data) => {
-    type: 'RECEIVE_VIDEOS',
-    data
+function RECEIVE_VIDEOS(data){
+    const action = {
+        type: 'RECEIVE_VIDEOS',
+        data
+    }
 }
-// export const SELECT_GENRE = 'SELECT_GENRE'
-// export const INVALIDATE_GENRE = 'INVALIDATE_GENRE'
+export const sendRequestVideosDispatch = () => dispatch(REQUEST_VIDEOS());
+export const sendReceiveVideosDispatch = (data) => dispatch(RECEIVE_VIDEOS(data));
